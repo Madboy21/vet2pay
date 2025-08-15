@@ -342,7 +342,7 @@
       const WITHDRAW_THRESHOLD_VET = 10000; // 100.00 VET (in "cents")
       const AD_REWARD_VET_CENTS = 50;        // 0.01 VET
       const REFERRAL_BONUS_VET = 20;        // 0.50 VET (display only; real logic needs backend)
-      const DAILY_AD_LIMIT = 1000;
+      const DAILY_AD_LIMIT = 25;
 
       // --- State ---
       let state = {
@@ -405,7 +405,7 @@
         if (!window.__adReady) {
           els.rewardedBtn.textContent = 'Loading Ads...';
         } else {
-          els.rewardedBtn.textContent = limitReached ? 'Daily Limit Reached' : 'Watch Ad (+0.01 VET)';
+          els.rewardedBtn.textContent = limitReached ? 'Daily Limit Reached' : 'Watch Ad (+0.5 VET)';
         }
 
         // Referral display (local only)
@@ -571,3 +571,4 @@ Wallet (BEP20): ${wallet}`;
   </script>
 </body>
 </html>
+
