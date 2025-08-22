@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no"
+  />
   <title>Nexos Pay</title>
 
   <!-- Monetag SDK -->
@@ -174,12 +177,13 @@
 </head>
 <body>
   <div class="container">
-    <!-- Home -->
+    <!-- Home View -->
     <div id="home-view" class="view">
       <div class="header">
         <h1>Vet 2 Pay</h1>
         <p>Watch Ads and Earn Vet</p>
       </div>
+
       <div class="banner">Minimum Withdraw: <b>100 VET</b> · Daily Ad Limit: <b>25</b></div>
 
       <div class="card">
@@ -202,17 +206,19 @@
       </div>
 
       <button class="btn" id="mainWithdrawBtn" disabled>Reach 100.00 VET to Withdraw</button>
+
       <div id="tgWarning" class="tg-warning">
-        Open this page from Telegram (via your bot’s Web App) to enable earning and withdrawal.
+        Open this page from Telegram Web App to enable earning and withdrawal.
       </div>
     </div>
 
-    <!-- Withdraw -->
+    <!-- Withdraw View -->
     <div id="withdraw-view" class="view">
       <div class="header">
         <h1>Withdraw</h1>
         <p>Request your earnings</p>
       </div>
+
       <div class="card">
         <h2>Your Balance</h2>
         <div class="balance-amount" id="withdrawBalanceDisplay">VET 0.00</div>
@@ -220,22 +226,24 @@
           Minimum withdrawal is <b>100.00 VET</b>.
         </p>
       </div>
+
       <div class="card">
         <h2>Payment Details</h2>
         <div class="input-group">
           <label for="paymentAddress">Your VET Wallet (BEP20)</label>
-          <input type="text" id="paymentAddress" placeholder="e.g., 0x... (BEP20 Address)" />
+          <input type="text" id="paymentAddress" placeholder="0x... (BEP20 Address)" />
         </div>
         <button class="btn" id="finalWithdrawBtn" disabled>Withdraw</button>
       </div>
     </div>
 
-    <!-- Referral -->
+    <!-- Referral View -->
     <div id="referral-view" class="view">
       <div class="header">
         <h1>Referrals</h1>
         <p>Invite friends and earn more!</p>
       </div>
+
       <div class="card">
         <h2>Your Referral Stats</h2>
         <div class="ad-info-grid">
@@ -245,22 +253,19 @@
           </div>
           <div class="ad-info-item">
             <h3 id="referralBonusDisplay">VET 0.00</h3>
-            <p>Referral Earnings (local)</p>
+            <p>Referral Earnings</p>
           </div>
         </div>
       </div>
 
       <div class="card">
         <h2>Your Referral Link</h2>
-        <p>Share this link. You get <b>0.50 VET</b> per verified friend (backend required).</p>
+        <p>Share this link. Earn <b>0.50 VET</b> per verified friend (backend required).</p>
         <p id="referralLink" title="Click to copy"></p>
-        <p style="font-size:12px; color:var(--tg-theme-hint-color); margin-top:10px;">
-          Note: Referral rewards require backend verification.
-        </p>
       </div>
     </div>
 
-    <!-- Common -->
+    <!-- Status & Admin -->
     <div class="status-message" id="statusMessage"></div>
     <div class="admin-panel" id="adminPanel">
       <h3>👑 Admin Panel</h3>
@@ -270,128 +275,134 @@
 
   <!-- Footer -->
   <footer class="footer-nav">
-    <button class="nav-btn active" id="navHome"><span class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><span>Home</span></button>
-    <button class="nav-btn" id="navWithdraw"><span class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.31 8.91a1 1 0 0 0-1.42 0l-4.24 4.24-2.12-2.12a1 1 0 1 0-1.42 1.42l2.83 2.83a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 0-1.42zM20 12a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-2 0a6 6 0 1 0-6 6 6 6 0 0 0 6-6z"/></svg></span><span>Withdraw</span></button>
-    <button class="nav-btn" id="navRefer"><span class="icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h7v-3H9v-1h2v-1H7.97C7.97 15 8 15 8 15zM16 13c-2.33 0-7 1.17-7 3.5V20h7v-3h2v-1h-2v-1h2v-1h-2v-1z"/></svg></span><span>Referral</span></button>
+    <button class="nav-btn active" id="navHome">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      </span>
+      <span>Home</span>
+    </button>
+    <button class="nav-btn" id="navWithdraw">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.31 8.91a1 1 0 0 0-1.42 0l-4.24 4.24-2.12-2.12a1 1 0 1 0-1.42 1.42l2.83 2.83a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 0-1.42zM20 12a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-2 0a6 6 0 1 0-6 6 6 6 0 0 0 6-6z"/></svg>
+      </span>
+      <span>Withdraw</span>
+    </button>
+    <button class="nav-btn" id="navRefer">
+      <span class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V18h14v-1.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V18h6v-1.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </span>
+      <span>Referrals</span>
+    </button>
   </footer>
 
   <script>
-    const DAILY_AD_LIMIT = 25;
-    const AD_REWARD_VET = 0.5;
-    let state = {
-      totalAdCount: 0,
-      dailyAdCount: 0,
-      balanceInCents: 0,
-      lastAdDate: null
-    };
-    let adToggle = true; // true = Monetag, false = Advertica
+    document.addEventListener('DOMContentLoaded', function () {
+      const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+      const tgWarning = document.getElementById('tgWarning');
 
-    const statusMessage = document.getElementById('statusMessage');
-    function setStatus(msg, type='info', duration=2000) {
-      statusMessage.textContent = msg;
-      statusMessage.className = `status-message ${type}`;
-      setTimeout(()=>{ statusMessage.className='status-message'; }, duration);
-    }
+      if (!tg) tgWarning.style.display = 'block';
 
-    function todayStr() {
-      const d = new Date();
-      return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
-    }
+      const els = {
+        balanceDisplay: document.getElementById('balanceDisplay'),
+        adCountDisplay: document.getElementById('adCountDisplay'),
+        dailyAdCountDisplay: document.getElementById('dailyAdCountDisplay'),
+        rewardedBtn: document.getElementById('rewardedBtn'),
+        mainWithdrawBtn: document.getElementById('mainWithdrawBtn'),
+        statusMessage: document.getElementById('statusMessage'),
+        withdrawBalanceDisplay: document.getElementById('withdrawBalanceDisplay'),
+        paymentAddressInput: document.getElementById('paymentAddress'),
+        finalWithdrawBtn: document.getElementById('finalWithdrawBtn'),
+        referralLink: document.getElementById('referralLink'),
+        referralCountDisplay: document.getElementById('referralCountDisplay'),
+        referralBonusDisplay: document.getElementById('referralBonusDisplay'),
+        adminPanel: document.getElementById('adminPanel'),
+        userInfo: document.getElementById('userInfo')
+      };
 
-    function saveState() {
-      localStorage.setItem('appState', JSON.stringify(state));
-    }
+      // Simulated user data
+      let user = {
+        id: tg ? tg.initDataUnsafe.user.id : 0,
+        balance: 0,
+        totalAds: 0,
+        dailyAds: 0,
+        referrals: 0,
+        referralBonus: 0
+      };
 
-    function loadState() {
-      const data = localStorage.getItem('appState');
-      if (data) state = JSON.parse(data);
-      if(state.lastAdDate !== todayStr()) state.dailyAdCount = 0;
-    }
+      const ADMIN_ID = 1290305525; // Replace with your Telegram ID
 
-    function updateUI() {
-      document.getElementById('balanceDisplay').textContent = `VET ${state.balanceInCents.toFixed(2)}`;
-      document.getElementById('withdrawBalanceDisplay').textContent = `VET ${state.balanceInCents.toFixed(2)}`;
-      document.getElementById('adCountDisplay').textContent = state.totalAdCount;
-      document.getElementById('dailyAdCountDisplay').textContent = `${state.dailyAdCount} / ${DAILY_AD_LIMIT}`;
-      document.getElementById('mainWithdrawBtn').disabled = state.balanceInCents < 100;
-      document.getElementById('finalWithdrawBtn').disabled = state.balanceInCents < 100;
-    }
-
-    function onAdSuccess() {
-      setStatus(`+${AD_REWARD_VET} VET earned!`, 'success');
-    }
-    function onAdError(e) {
-      console.error(e);
-      setStatus('Ad failed or skipped.', 'error');
-    }
-
-    function requestAd() {
-      if (state.dailyAdCount >= DAILY_AD_LIMIT) {
-        setStatus("You've reached the daily ad limit.", 'error');
-        return;
+      function updateUI() {
+        els.balanceDisplay.textContent = `VET ${user.balance.toFixed(2)}`;
+        els.withdrawBalanceDisplay.textContent = `VET ${user.balance.toFixed(2)}`;
+        els.adCountDisplay.textContent = user.totalAds;
+        els.dailyAdCountDisplay.textContent = `${user.dailyAds} / 25`;
+        els.mainWithdrawBtn.disabled = user.balance < 100;
+        els.finalWithdrawBtn.disabled = user.balance < 100 || !els.paymentAddressInput.value;
+        els.referralCountDisplay.textContent = user.referrals;
+        els.referralBonusDisplay.textContent = `VET ${user.referralBonus.toFixed(2)}`;
+        els.referralLink.textContent = `https://t.me/vet2pay_bot?start=${user.id}`;
+        if(user.id === ADMIN_ID) {
+          els.adminPanel.style.display = 'block';
+          els.userInfo.innerHTML = `
+            <b>User ID:</b> ${user.id}<br/>
+            <b>Balance:</b> ${user.balance.toFixed(2)} VET<br/>
+            <b>Total Ads:</b> ${user.totalAds}<br/>
+            <b>Referrals:</b> ${user.referrals}<br/>
+            <b>Referral Bonus:</b> ${user.referralBonus.toFixed(2)} VET
+          `;
+        }
       }
 
-      if (adToggle) {
-        // Monetag ad
-        if (typeof window.show_9717667 === 'function') {
-          try {
-            const p = window.show_9717667();
-            if (p && typeof p.then === 'function') {
-              p.then(onAdSuccess).catch(onAdError);
-            } else {
-              setTimeout(onAdSuccess, 1200);
-            }
-          } catch (e) { onAdError(e); }
-        } else {
-          setStatus('Monetag not ready.', 'error');
-        }
-      } else {
-        // Advertica ad
-        const adWindow = window.open('https://data684.click/62d0e9f83ee59f8518e3/270be8d86b/?placementName=default', '_blank');
-        if (adWindow) {
-          setTimeout(onAdSuccess, 2000);
-        } else {
-          setStatus('Popup blocked. Allow popups to watch ads.', 'error');
+      function showStatus(msg, type='success', duration=2000) {
+        els.statusMessage.textContent = msg;
+        els.statusMessage.className = `status-message ${type}`;
+        setTimeout(()=>els.statusMessage.className='status-message', duration);
+      }
+
+      // Watch Ad
+      els.rewardedBtn.addEventListener('click', () => {
+        if(user.dailyAds >= 25) {
+          showStatus('Daily limit reached', 'error');
           return;
         }
-      }
+        user.balance += 0.5;
+        user.totalAds++;
+        user.dailyAds++;
+        updateUI();
+        showStatus('Ad watched! +0.5 VET', 'success');
+      });
 
-      state.totalAdCount++;
-      state.dailyAdCount++;
-      state.lastAdDate = todayStr();
-      state.balanceInCents += AD_REWARD_VET;
-      saveState();
+      // Withdraw
+      els.paymentAddressInput.addEventListener('input', () => {
+        els.finalWithdrawBtn.disabled = user.balance < 100 || !els.paymentAddressInput.value;
+      });
+
+      els.finalWithdrawBtn.addEventListener('click', () => {
+        showStatus(`Withdraw request sent for ${user.balance.toFixed(2)} VET`, 'info');
+        user.balance = 0;
+        updateUI();
+      });
+
+      // Copy referral link
+      els.referralLink.addEventListener('click', () => {
+        navigator.clipboard.writeText(els.referralLink.textContent);
+        showStatus('Referral link copied', 'success');
+      });
+
       updateUI();
-      adToggle = !adToggle;
-    }
 
-    // Navigation
-    const views = ['home', 'withdraw', 'refer'];
-    function showView(name) {
-      views.forEach(v => document.getElementById(`${v}-view`).style.display = v===name?'block':'none');
-      views.forEach(v => document.getElementById(`nav${v.charAt(0).toUpperCase()+v.slice(1)}`).classList.toggle('active', v===name));
-    }
-
-    document.getElementById('navHome').addEventListener('click', ()=>showView('home'));
-    document.getElementById('navWithdraw').addEventListener('click', ()=>showView('withdraw'));
-    document.getElementById('navRefer').addEventListener('click', ()=>showView('refer'));
-
-    document.getElementById('rewardedBtn').addEventListener('click', requestAd);
-
-    // Referral
-    const referralLinkElem = document.getElementById('referralLink');
-    const userId = Math.floor(Math.random()*1000000);
-    referralLinkElem.textContent = `${location.origin}?ref=${userId}`;
-    referralLinkElem.addEventListener('click', ()=>{
-      navigator.clipboard.writeText(referralLinkElem.textContent);
-      setStatus('Referral link copied!', 'success');
+      // Navigation
+      const nav = { home: document.getElementById('navHome'), withdraw: document.getElementById('navWithdraw'), refer: document.getElementById('navRefer') };
+      const views = { home: document.getElementById('home-view'), withdraw: document.getElementById('withdraw-view'), refer: document.getElementById('referral-view') };
+      Object.keys(nav).forEach(key => {
+        nav[key].addEventListener('click', () => {
+          Object.values(views).forEach(v=>v.style.display='none');
+          views[key].style.display='block';
+          Object.values(nav).forEach(b=>b.classList.remove('active'));
+          nav[key].classList.add('active');
+        });
+      });
     });
-
-    loadState();
-    updateUI();
   </script>
 </body>
 </html>
