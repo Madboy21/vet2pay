@@ -7,8 +7,6 @@
 
   <!-- Monetag SDK -->
   <script src="//libtl.com/sdk.js" data-zone="9717667" data-sdk="show_9717667" async></script>
-  <!-- Advertica SDK -->
-  <script src="//advertica.io/sdk.js" data-zone="123456" async></script>
 
   <!-- Telegram Web App SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -58,178 +56,342 @@
       box-shadow: 0 8px 16px rgba(0,0,0,.18);
       text-align: left;
     }
-    .card h2 { margin: 0 0 10px; font-size: 14px; color: var(--tg-theme-hint-color); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--tg-theme-hint-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
     .balance-amount { font-size: 40px; font-weight: 800; color: #fff; margin-bottom: 8px; }
-    .ad-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; text-align: center; }
+    .ad-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      text-align: center;
+    }
     .ad-info-item h3 { font-size: 19px; font-weight: 700; margin: 0 0 4px; color: #fff; }
     .ad-info-item p { font-size: 13px; color: var(--tg-theme-hint-color); margin: 0; }
     .ad-buttons { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
-    .btn { width: 100%; padding: 15px; font-size: 17px; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease; background: linear-gradient(145deg, var(--tg-theme-button-color), #0056b3); color: var(--tg-theme-button-text-color); box-shadow: 0 4px 10px rgba(0, 123, 255, .2); }
+    .btn {
+      width: 100%;
+      padding: 15px;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+      background: linear-gradient(145deg, var(--tg-theme-button-color), #0056b3);
+      color: var(--tg-theme-button-text-color);
+      box-shadow: 0 4px 10px rgba(0, 123, 255, .2);
+    }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0, 123, 255, .28); }
     .btn:active { transform: scale(.985); }
     .btn:disabled { background: #555; color: #9a9a9a; cursor: not-allowed; box-shadow: none; transform: none; }
-    #mainWithdrawBtn { background: linear-gradient(145deg, var(--success-color), #1e7e34); box-shadow: 0 4px 10px rgba(40, 167, 69, .2); }
+    #mainWithdrawBtn {
+      background: linear-gradient(145deg, var(--success-color), #1e7e34);
+      box-shadow: 0 4px 10px rgba(40, 167, 69, .2);
+    }
     #mainWithdrawBtn:disabled { background: #555; box-shadow: none; }
-    .banner { font-size: 13px; padding: 10px 12px; border: 1px dashed var(--border-color); border-radius: 10px; color: var(--tg-theme-hint-color); text-align: center; margin-bottom: 16px; }
-    .status-message { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 500px; padding: 12px 14px; border-radius: 10px; font-weight: 600; display: none; z-index: 1000; }
+    .banner {
+      font-size: 13px;
+      padding: 10px 12px;
+      border: 1px dashed var(--border-color);
+      border-radius: 10px;
+      color: var(--tg-theme-hint-color);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .status-message {
+      position: fixed;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      max-width: 500px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      display: none;
+      z-index: 1000;
+    }
     .success { display: block; background: rgba(40,167,69,.22); border-left: 5px solid var(--success-color); color: var(--success-color); }
     .error { display: block; background: rgba(220,53,69,.22); border-left: 5px solid var(--danger-color); color: var(--danger-color); }
     .info { display: block; background: rgba(0,123,255,.22); border-left: 5px solid var(--tg-theme-button-color); color: #008cff; }
-    .footer-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--secondary-bg-color); display: flex; justify-content: space-around; padding: 9px 0; border-top: 1px solid var(--border-color); box-shadow: 0 -4px 12px rgba(0,0,0,.28); z-index: 999; }
-    .nav-btn { background: none; border: none; color: var(--tg-theme-hint-color); display: flex; flex-direction: column; align-items: center; font-size: 12px; font-weight: 600; cursor: pointer; padding: 5px 14px; border-radius: 12px; transition: color .15s, background-color .15s; }
+    .footer-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--secondary-bg-color);
+      display: flex; justify-content: space-around;
+      padding: 9px 0;
+      border-top: 1px solid var(--border-color);
+      box-shadow: 0 -4px 12px rgba(0,0,0,.28);
+      z-index: 999;
+    }
+    .nav-btn {
+      background: none; border: none; color: var(--tg-theme-hint-color);
+      display: flex; flex-direction: column; align-items: center;
+      font-size: 12px; font-weight: 600; cursor: pointer; padding: 5px 14px;
+      border-radius: 12px; transition: color .15s, background-color .15s;
+    }
     .nav-btn.active { color: var(--tg-theme-button-color); }
     .nav-btn:hover:not(.active) { color: #fff; }
     .nav-btn .icon { width: 26px; height: 26px; margin-bottom: 3px; }
     .input-group { margin-bottom: 16px; text-align: left; }
     .input-group label { display: block; margin-bottom: 7px; color: var(--tg-theme-hint-color); font-size: 13px; font-weight: 600; }
-    .input-group input { width: 100%; padding: 13px; border-radius: 10px; border: 1px solid var(--border-color); background: #333; color: var(--tg-theme-text-color); font-size: 16px; }
-    .input-group input:focus { outline: none; border-color: var(--tg-theme-button-color); box-shadow: 0 0 0 3px rgba(0,123,255,.18); }
-    #referralLink { background: #111; padding: 14px; border-radius: 10px; word-wrap: break-word; border: 1px dashed var(--tg-theme-hint-color); margin-top: 12px; cursor: pointer; color: #e0e0e0; transition: background .15s; text-align: left; }
+    .input-group input {
+      width: 100%; padding: 13px; border-radius: 10px; border: 1px solid var(--border-color);
+      background: #333; color: var(--tg-theme-text-color); font-size: 16px;
+    }
+    .input-group input:focus {
+      outline: none; border-color: var(--tg-theme-button-color);
+      box-shadow: 0 0 0 3px rgba(0,123,255,.18);
+    }
+    #referralLink {
+      background: #111; padding: 14px; border-radius: 10px; word-wrap: break-word;
+      border: 1px dashed var(--tg-theme-hint-color); margin-top: 12px; cursor: pointer; color: #e0e0e0;
+      transition: background .15s; text-align: left;
+    }
     #referralLink:hover { background: #2a2a2a; }
-    .admin-panel { display: none; margin-top: 20px; padding: 12px; border: 1px solid var(--warning-color); border-radius: 10px; background: rgba(255,193,7,.08); }
+    .admin-panel {
+      display: none; margin-top: 20px; padding: 12px; border: 1px solid var(--warning-color);
+      border-radius: 10px; background: rgba(255,193,7,.08);
+    }
     .admin-panel h3 { color: var(--warning-color); margin: 0 0 8px; }
-    .tg-warning { margin-top: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border-color); color: var(--warning-color); background: rgba(255,193,7,.08); font-size: 13px; display: none; }
+    .tg-warning {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      color: var(--warning-color);
+      background: rgba(255,193,7,.08);
+      font-size: 13px;
+      display: none;
+    }
   </style>
 </head>
 <body>
-<div class="container">
-  <!-- Home -->
-  <div id="home-view" class="view">
-    <div class="header">
-      <h1>Vet 2 Pay</h1>
-      <p>Watch Ads and Earn Vet</p>
-    </div>
-    <div class="banner">Minimum Withdraw: <b>100 VET</b> · Daily Ad Limit: <b>25</b></div>
-    <div class="card">
-      <h2>Current Balance</h2>
-      <div class="balance-amount" id="balanceDisplay">VET 0.00</div>
-      <div class="ad-info-grid">
-        <div class="ad-info-item">
-          <h3 id="adCountDisplay">0</h3>
-          <p>Total Ads Watched</p>
+  <div class="container">
+    <!-- Home -->
+    <div id="home-view" class="view">
+      <div class="header">
+        <h1>Vet 2 Pay</h1>
+        <p>Watch Ads and Earn Vet</p>
+      </div>
+      <div class="banner">Minimum Withdraw: <b>100 VET</b> · Daily Ad Limit: <b>25</b></div>
+
+      <div class="card">
+        <h2>Current Balance</h2>
+        <div class="balance-amount" id="balanceDisplay">VET 0.00</div>
+        <div class="ad-info-grid">
+          <div class="ad-info-item">
+            <h3 id="adCountDisplay">0</h3>
+            <p>Total Ads Watched</p>
+          </div>
+          <div class="ad-info-item">
+            <h3 id="dailyAdCountDisplay">0 / 25</h3>
+            <p>Today's Ads</p>
+          </div>
         </div>
-        <div class="ad-info-item">
-          <h3 id="dailyAdCountDisplay">0 / 25</h3>
-          <p>Today's Ads</p>
+      </div>
+
+      <div class="ad-buttons">
+        <button class="btn" id="rewardedBtn">Watch Ad (+0.5 VET)</button>
+      </div>
+
+      <button class="btn" id="mainWithdrawBtn" disabled>Reach 100.00 VET to Withdraw</button>
+      <div id="tgWarning" class="tg-warning">
+        Open this page from Telegram (via your bot’s Web App) to enable earning and withdrawal.
+      </div>
+    </div>
+
+    <!-- Withdraw -->
+    <div id="withdraw-view" class="view">
+      <div class="header">
+        <h1>Withdraw</h1>
+        <p>Request your earnings</p>
+      </div>
+      <div class="card">
+        <h2>Your Balance</h2>
+        <div class="balance-amount" id="withdrawBalanceDisplay">VET 0.00</div>
+        <p style="color: var(--tg-theme-hint-color); margin-top: 10px;">
+          Minimum withdrawal is <b>100.00 VET</b>.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Payment Details</h2>
+        <div class="input-group">
+          <label for="paymentAddress">Your VET Wallet (BEP20)</label>
+          <input type="text" id="paymentAddress" placeholder="e.g., 0x... (BEP20 Address)" />
+        </div>
+        <button class="btn" id="finalWithdrawBtn" disabled>Withdraw</button>
+      </div>
+    </div>
+
+    <!-- Referral -->
+    <div id="referral-view" class="view">
+      <div class="header">
+        <h1>Referrals</h1>
+        <p>Invite friends and earn more!</p>
+      </div>
+      <div class="card">
+        <h2>Your Referral Stats</h2>
+        <div class="ad-info-grid">
+          <div class="ad-info-item">
+            <h3 id="referralCountDisplay">0</h3>
+            <p>Total Referrals</p>
+          </div>
+          <div class="ad-info-item">
+            <h3 id="referralBonusDisplay">VET 0.00</h3>
+            <p>Referral Earnings (local)</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="ad-buttons">
-      <button class="btn" id="rewardedBtn">Watch Ad (+0.5 VET)</button>
-    </div>
-    <button class="btn" id="mainWithdrawBtn" disabled>Reach 100.00 VET to Withdraw</button>
-    <div id="tgWarning" class="tg-warning">Open this page from Telegram to enable earning and withdrawal.</div>
-  </div>
 
-  <!-- Withdraw -->
-  <div id="withdraw-view" class="view">
-    <div class="header"><h1>Withdraw</h1><p>Request your earnings</p></div>
-    <div class="card">
-      <h2>Your Balance</h2>
-      <div class="balance-amount" id="withdrawBalanceDisplay">VET 0.00</div>
-      <p style="color: var(--tg-theme-hint-color); margin-top: 10px;">Minimum withdrawal is <b>100.00 VET</b>.</p>
-    </div>
-    <div class="card">
-      <h2>Payment Details</h2>
-      <div class="input-group">
-        <label for="paymentAddress">Your VET Wallet (BEP20)</label>
-        <input type="text" id="paymentAddress" placeholder="e.g., 0x... (BEP20 Address)" />
-      </div>
-      <button class="btn" id="finalWithdrawBtn" disabled>Withdraw</button>
-    </div>
-  </div>
-
-  <!-- Referral -->
-  <div id="referral-view" class="view">
-    <div class="header"><h1>Referrals</h1><p>Invite friends and earn more!</p></div>
-    <div class="card">
-      <h2>Your Referral Stats</h2>
-      <div class="ad-info-grid">
-        <div class="ad-info-item"><h3 id="referralCountDisplay">0</h3><p>Total Referrals</p></div>
-        <div class="ad-info-item"><h3 id="referralBonusDisplay">VET 0.00</h3><p>Referral Earnings (local)</p></div>
+      <div class="card">
+        <h2>Your Referral Link</h2>
+        <p>Share this link. You get <b>0.50 VET</b> per verified friend (backend required).</p>
+        <p id="referralLink" title="Click to copy"></p>
+        <p style="font-size:12px; color:var(--tg-theme-hint-color); margin-top:10px;">
+          Note: Referral rewards require backend verification.
+        </p>
       </div>
     </div>
-    <div class="card">
-      <h2>Your Referral Link</h2>
-      <p>Share this link. You get <b>0.50 VET</b> per verified friend (backend required).</p>
-      <p id="referralLink" title="Click to copy"></p>
+
+    <!-- Common -->
+    <div class="status-message" id="statusMessage"></div>
+    <div class="admin-panel" id="adminPanel">
+      <h3>👑 Admin Panel</h3>
+      <p id="userInfo"></p>
     </div>
   </div>
 
-  <div class="status-message" id="statusMessage"></div>
-  <div class="admin-panel" id="adminPanel"><h3>👑 Admin Panel</h3><p id="userInfo"></p></div>
-</div>
+  <!-- Footer -->
+  <footer class="footer-nav">
+    <button class="nav-btn active" id="navHome"><span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><span>Home</span></button>
+    <button class="nav-btn" id="navWithdraw"><span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.31 8.91a1 1 0 0 0-1.42 0l-4.24 4.24-2.12-2.12a1 1 0 1 0-1.42 1.42l2.83 2.83a1 1 0 0 0 1.42 0l5-5a1 1 0 0 0 0-1.42zM20 12a8 8 0 1 1-8-8 8 8 0 0 1 8 8zm-2 0a6 6 0 1 0-6 6 6 6 0 0 0 6-6z"/></svg></span><span>Withdraw</span></button>
+    <button class="nav-btn" id="navRefer"><span class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h7v-3H9v-1h2v-1H7.97C7.97 15 8 15 8 15zM16 13c-2.33 0-7 1.17-7 3.5V20h7v-3h2v-1h-2v-1h2v-1h-2v-1z"/></svg></span><span>Referral</span></button>
+  </footer>
 
-<!-- Footer -->
-<footer class="footer-nav">
-  <button class="nav-btn active" id="navHome"><span class="icon">&#8962;</span><span>Home</span></button>
-  <button class="nav-btn" id="navWithdraw"><span class="icon">&#36;</span><span>Withdraw</span></button>
-  <button class="nav-btn" id="navRefer"><span class="icon">&#128101;</span><span>Referrals</span></button>
-</footer>
+  <script>
+    const DAILY_AD_LIMIT = 25;
+    const AD_REWARD_VET = 0.5;
+    let state = {
+      totalAdCount: 0,
+      dailyAdCount: 0,
+      balanceInCents: 0,
+      lastAdDate: null
+    };
+    let adToggle = true; // true = Monetag, false = Advertica
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
-  if (!tg) document.getElementById('tgWarning').style.display = 'block';
+    const statusMessage = document.getElementById('statusMessage');
+    function setStatus(msg, type='info', duration=2000) {
+      statusMessage.textContent = msg;
+      statusMessage.className = `status-message ${type}`;
+      setTimeout(()=>{ statusMessage.className='status-message'; }, duration);
+    }
 
-  const els = {
-    balanceDisplay: document.getElementById('balanceDisplay'),
-    adCountDisplay: document.getElementById('adCountDisplay'),
-    dailyAdCountDisplay: document.getElementById('dailyAdCountDisplay'),
-    rewardedBtn: document.getElementById('rewardedBtn'),
-    mainWithdrawBtn: document.getElementById('mainWithdrawBtn'),
-    statusMessage: document.getElementById('statusMessage'),
-    withdrawBalanceDisplay: document.getElementById('withdrawBalanceDisplay'),
-    paymentAddressInput: document.getElementById('paymentAddress'),
-    finalWithdrawBtn: document.getElementById('finalWithdrawBtn'),
-    referralLinkDisplay: document.getElementById('referralLink'),
-    referralCountDisplay: document.getElementById('referralCountDisplay'),
-    referralBonusDisplay: document.getElementById('referralBonusDisplay'),
-    adminPanel: document.getElementById('adminPanel'),
-    userInfoDisplay: document.getElementById('userInfo'),
-  };
+    function todayStr() {
+      const d = new Date();
+      return `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}`;
+    }
 
-  const ADMIN_ID = 1290305525;
-  const BOT_USERNAME = 'vet2pay_bot';
-  const WITHDRAW_THRESHOLD_VET = 10000; 
-  const AD_REWARD_VET_CENTS = 50;
-  const REFERRAL_BONUS_VET = 50;
-  const DAILY_AD_LIMIT = 25;
+    function saveState() {
+      localStorage.setItem('appState', JSON.stringify(state));
+    }
 
-  let state = { balanceInCents:0, totalAdCount:0, dailyAdCount:0, lastAdDate:null, referralCount:0 };
-  const todayStr = ()=>new Date().toISOString().split('T')[0];
+    function loadState() {
+      const data = localStorage.getItem('appState');
+      if (data) state = JSON.parse(data);
+      if(state.lastAdDate !== todayStr()) state.dailyAdCount = 0;
+    }
 
-  function loadState(){try{const s=JSON.parse(localStorage.getItem('earningAppVETState'));if(s)state={...state,...s}}catch(e){console.error(e);}if(state.lastAdDate!==todayStr()){state.dailyAdCount=0;state.lastAdDate=todayStr();saveState();}}
-  function saveState(){try{localStorage.setItem('earningAppVETState',JSON.stringify(state))}catch(e){console.error(e);}}
-  function setStatus(msg,type,ms=3500){const el=els.statusMessage;if(!el)return;el.textContent=msg;el.className='status-message '+type;el.style.display='block';clearTimeout(setStatus._t);setStatus._t=setTimeout(()=>{el.style.display='none'},ms);}
-  function updateUI(){const bal=(state.balanceInCents/100).toFixed(2);els.balanceDisplay.textContent=`VET ${bal}`;els.withdrawBalanceDisplay.textContent=`VET ${bal}`;els.adCountDisplay.textContent=state.totalAdCount;els.dailyAdCountDisplay.textContent=`${state.dailyAdCount} / ${DAILY_AD_LIMIT}`;const canWithdraw=state.balanceInCents>=WITHDRAW_THRESHOLD_VET;els.mainWithdrawBtn.disabled=!canWithdraw;els.mainWithdrawBtn.textContent=canWithdraw?`Go to Withdraw`:`Reach ${(WITHDRAW_THRESHOLD_VET/100).toFixed(2)} VET to Withdraw`;els.finalWithdrawBtn.disabled=!canWithdraw;els.finalWithdrawBtn.textContent=canWithdraw?`Withdraw ${bal} VET`:`Minimum ${(WITHDRAW_THRESHOLD_VET/100).toFixed(2)} VET required`;const limitReached=state.dailyAdCount>=DAILY_AD_LIMIT;els.rewardedBtn.disabled=limitReached||!window.__adReady;els.rewardedBtn.textContent=!window.__adReady?'Loading Ads...':limitReached?'Daily Limit Reached':'Watch Ad (+0.5 VET)';els.referralCountDisplay.textContent=state.referralCount;const refBonus=((state.referralCount*REFERRAL_BONUS_VET)/100).toFixed(2);els.referralBonusDisplay.textContent=`VET ${refBonus}`;}
+    function updateUI() {
+      document.getElementById('balanceDisplay').textContent = `VET ${state.balanceInCents.toFixed(2)}`;
+      document.getElementById('withdrawBalanceDisplay').textContent = `VET ${state.balanceInCents.toFixed(2)}`;
+      document.getElementById('adCountDisplay').textContent = state.totalAdCount;
+      document.getElementById('dailyAdCountDisplay').textContent = `${state.dailyAdCount} / ${DAILY_AD_LIMIT}`;
+      document.getElementById('mainWithdrawBtn').disabled = state.balanceInCents < 100;
+      document.getElementById('finalWithdrawBtn').disabled = state.balanceInCents < 100;
+    }
 
-  function showView(id){document.querySelectorAll('.view').forEach(v=>v.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));if(id==='home-view')els.navHome.classList.add('active');else if(id==='withdraw-view')els.navWithdraw.classList.add('active');else if(id==='referral-view')els.navRefer.classList.add('active');}
+    function onAdSuccess() {
+      setStatus(`+${AD_REWARD_VET} VET earned!`, 'success');
+    }
+    function onAdError(e) {
+      console.error(e);
+      setStatus('Ad failed or skipped.', 'error');
+    }
 
-  els.navHome.onclick = ()=>showView('home-view');
-  els.navWithdraw.onclick = ()=>showView('withdraw-view');
-  els.navRefer.onclick = ()=>showView('referral-view');
+    function requestAd() {
+      if (state.dailyAdCount >= DAILY_AD_LIMIT) {
+        setStatus("You've reached the daily ad limit.", 'error');
+        return;
+      }
 
-  els.rewardedBtn.onclick = async ()=>{
-    if(state.dailyAdCount>=DAILY_AD_LIMIT){setStatus('Daily ad limit reached!', 'warning');return;}
-    const isMonetag = Math.random()<0.5;
-    if(isMonetag){if(window.__MonetagShow){window.__MonetagShow();} else console.warn('Monetag not ready');} else {if(window.__AdverticaShow){window.__AdverticaShow();} else console.warn('Advertica not ready');}
-    state.dailyAdCount++; state.totalAdCount++; state.balanceInCents+=AD_REWARD_VET_CENTS; saveState(); updateUI();
-    setStatus('+0.50 VET Earned!', 'success');
-  };
+      if (adToggle) {
+        // Monetag ad
+        if (typeof window.show_9717667 === 'function') {
+          try {
+            const p = window.show_9717667();
+            if (p && typeof p.then === 'function') {
+              p.then(onAdSuccess).catch(onAdError);
+            } else {
+              setTimeout(onAdSuccess, 1200);
+            }
+          } catch (e) { onAdError(e); }
+        } else {
+          setStatus('Monetag not ready.', 'error');
+        }
+      } else {
+        // Advertica ad
+        const adWindow = window.open('https://data684.click/62d0e9f83ee59f8518e3/270be8d86b/?placementName=default', '_blank');
+        if (adWindow) {
+          setTimeout(onAdSuccess, 2000);
+        } else {
+          setStatus('Popup blocked. Allow popups to watch ads.', 'error');
+          return;
+        }
+      }
 
-  els.mainWithdrawBtn.onclick=()=>showView('withdraw-view');
-  els.finalWithdrawBtn.onclick=()=>{
-    const addr=els.paymentAddressInput.value.trim();if(!addr){setStatus('Enter valid wallet address','error');return;}
-    setStatus(`Withdraw Request of VET ${(state.balanceInCents/100).toFixed(2)} sent!`,`success`,5000);state.balanceInCents=0;saveState();updateUI();
-  };
+      state.totalAdCount++;
+      state.dailyAdCount++;
+      state.lastAdDate = todayStr();
+      state.balanceInCents += AD_REWARD_VET;
+      saveState();
+      updateUI();
+      adToggle = !adToggle;
+    }
 
-  els.referralLinkDisplay.textContent=`https://t.me/${BOT_USERNAME}?start=${tg?tg.initDataUnsafe.user.id:0}`;
-  els.referralLinkDisplay.onclick=()=>{navigator.clipboard.writeText(els.referralLinkDisplay.textContent);setStatus('Referral link copied!','success');};
+    // Navigation
+    const views = ['home', 'withdraw', 'refer'];
+    function showView(name) {
+      views.forEach(v => document.getElementById(`${v}-view`).style.display = v===name?'block':'none');
+      views.forEach(v => document.getElementById(`nav${v.charAt(0).toUpperCase()+v.slice(1)}`).classList.toggle('active', v===name));
+    }
 
-  loadState();updateUI();
-  if(tg&&tg.initDataUnsafe.user.id===ADMIN_ID)els.adminPanel.style.display='block';
-});
-</script>
+    document.getElementById('navHome').addEventListener('click', ()=>showView('home'));
+    document.getElementById('navWithdraw').addEventListener('click', ()=>showView('withdraw'));
+    document.getElementById('navRefer').addEventListener('click', ()=>showView('refer'));
+
+    document.getElementById('rewardedBtn').addEventListener('click', requestAd);
+
+    // Referral
+    const referralLinkElem = document.getElementById('referralLink');
+    const userId = Math.floor(Math.random()*1000000);
+    referralLinkElem.textContent = `${location.origin}?ref=${userId}`;
+    referralLinkElem.addEventListener('click', ()=>{
+      navigator.clipboard.writeText(referralLinkElem.textContent);
+      setStatus('Referral link copied!', 'success');
+    });
+
+    loadState();
+    updateUI();
+  </script>
 </body>
 </html>
